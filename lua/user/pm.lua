@@ -28,6 +28,13 @@ return require('packer').startup(function(use)
     config = function() require('user.plugins.treesitter') end,
 --    run = ':TSUpdate'
   })
+
+  -- tokyonight
+  use ({
+    'folke/tokyonight.nvim',
+    config = function() require('user.plugins.tokyonight') end,
+  })
+
   -- Lua
   use {
     "folke/which-key.nvim",
