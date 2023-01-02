@@ -16,7 +16,72 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- My plugins here
+
+  use ({
+	  "lewis6991/impatient.nvim",
+	  config = function() require('user.plugins.treesitter') end,
+  })
+
+  -- Treesitter
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    config = function() require('user.plugins.treesitter') end,
+--    run = ':TSUpdate'
+  })
+  -- Lua
+  use {
+    "folke/which-key.nvim",
+    config = function() require("user.plugins.which-key") end
+  }
+
+  -- Autocomplete
+  use({
+    "hrsh7th/nvim-cmp",
+    -- Sources for nvim-cmp
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = function() require('user.plugins.cmp') end,
+  })
+
+  -- snippets
+  use { "L3MON4D3/LuaSnip" } --snippet engine
+  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+
+  -- LSP
+  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
+  use { "neovim/nvim-lspconfig" } -- enable LSP
+  use { "williamboman/mason.nvim" }
+  use { "williamboman/mason-lspconfig.nvim" }
+  use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
+  use { "RRethy/vim-illuminate" }
+
+  -- Git
+  use { "lewis6991/gitsigns.nvim" }
+
+  -- DAP
+  use { "mfussenegger/nvim-dap" }
+  use { "rcarriga/nvim-dap-ui" }
+  use { "ravenxrz/DAPInstall.nvim" }
+
+  -- Telescope
+  use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
+  use({
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/plenary.nvim'}},
+    config = function() require('user.plugins.telescope') end,
+  })
+
+  -- statusline
+  use({
+    'hoob3rt/lualine.nvim',
+    config = function() require('user.plugins.lualine') end,
+  })
 
   --nvim-tree
   use({
