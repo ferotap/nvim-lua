@@ -33,23 +33,34 @@ return require('packer').startup(function(use)
   })
 	-- Treesitter
 	use({
-		'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter',
 		config = function() require('user.plugins.treesitter') end,
 		--    run = ':TSUpdate'
 	})
 
-	-- tokyonight
+  use ({
+    "akinsho/toggleterm.nvim",
+    -- tag = '*',
+    config = function() require("user.plugins.toggleterm") end
+  })
+
+  -- tokyonight
 	use ({
 		'folke/tokyonight.nvim',
 		config = function() require('user.plugins.tokyonight') end,
 	})
 
 	-- Lua
-	use {
+	use  {
 		"folke/which-key.nvim",
 		config = function() require("user.plugins.which-key") end
 	}
 
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function() require("user.plugins.trouble") end
+  }
 	-- Autocomplete
 	use({
 		"hrsh7th/nvim-cmp",

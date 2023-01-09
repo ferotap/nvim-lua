@@ -7,12 +7,18 @@ end
 wk.setup{}
 wk.register({
   f = {
-    name = "file",
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false }, -- additional options for creating the keymap
+    name = "Telescope",
+    b = { "<cmd>Telescope buffers<cr>", "Select buffer" },
+    f = { "<cmd>Telescope find_files<cr>", "Find file" },
+    g = { "<cmd>Telescope git_files<cr>", "Find git file" },
+    h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
+    m = { "<cmd>Telescope marks<cr>", "Show marks" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open recent file"},
+    R = { "<cmd>Telescope registers<cr>", "Show registers"},
+    s = { "<cmd>Telescope live_grep<cr>", "Search text"},
+    z = { "<cmd>Telescope spell_suggest<cr>", "Spelling suggestions"},
     n = { "New File" }, -- just a label. don't create any mapping
     e = "Edit File", -- same as above
     ["1"] = "which_key_ignore",  -- special label to hide it in the popup
-    b = { function() print("bar") end, "Foobar" } -- you can also pass functions!
   },
 }, { prefix = "<leader>" })

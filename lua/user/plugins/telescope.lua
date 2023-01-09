@@ -3,6 +3,8 @@ local actions = require('telescope.actions')
 -- local utils = require('telescope.utils')
 -- local trouble = require('telescope.providers.telescope')
 
+local trouble = require("trouble.providers.telescope")
+
 require('telescope').setup({
   defaults = {
     sorting_strategy = "ascending",
@@ -11,9 +13,11 @@ require('telescope').setup({
         ['<C-j>'] = actions.move_selection_next,
         ['<C-k>'] = actions.move_selection_previous,
         ['<C-c>'] = actions.close,
+        ["<c-t>"] = trouble.open_with_trouble,
       },
       n = {
         ['<C-c>'] = actions.close,
+        ["<c-t>"] = trouble.open_with_trouble,
       },
     },
     layout_config = {
