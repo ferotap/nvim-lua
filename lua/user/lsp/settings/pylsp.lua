@@ -1,20 +1,28 @@
+local pylint_exe = vim.loop.cwd() .. '/.venv/bin/pylint'
+
 return {
-	settings = {
-		pylsp = {
-			configurationSources = "pycodestyle",
-			plugins = {
-				autopep8 = {
-					enabled = true,
-				},
-				pylint = {
-        -- args = [],
+  settings = {
+    pylsp = {
+      -- configurationSources = "pycodestyle",
+      plugins = {
+        autopep8 = {
+          enabled = false,
+        },
+        pycodestyle = {
+          enabled = false,
+        },
+        pylint = {
+          -- args = [],
           enabled = true,
-        -- executable = null
-				},
-			},
-		},
-	},
+          executable = pylint_exe,
+        },
+      },
+    },
+  },
 }
+
+-- Available settings and defaults
+--
         -- plugins.flake8.config                               = null,
         -- plugins.flake8.enabled                              = false,
         -- plugins.flake8.exclude                              = [],

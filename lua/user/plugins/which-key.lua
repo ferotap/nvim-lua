@@ -13,6 +13,7 @@ wk.register({
     g = { "<cmd>Telescope git_files<cr>", "Find git file" },
     h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
     m = { "<cmd>Telescope marks<cr>", "Show marks" },
+    p = { "<cmd>Telescope projects<cr>", "Projects" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open recent file"},
     R = { "<cmd>Telescope registers<cr>", "Show registers"},
     s = { "<cmd>Telescope live_grep<cr>", "Search text"},
