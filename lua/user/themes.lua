@@ -3,8 +3,8 @@
 
 -- TokioNight
 vim.g.tokyonight_style = 'night'
--- vim.g.tokyonight_italic_comments = false
-vim.cmd [[colorscheme tokyonight]]
+-- vim.g.tokyonight_italic_comments = true
+vim.cmd [[colorscheme tokyonight-night]]
 
 -- lunaperche
 -- vim.cmd [[colorscheme lunaperche]]
