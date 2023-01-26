@@ -1,12 +1,10 @@
 -- Vim specific
-vim.o.hidden             = true
-vim.o.fileencoding       = "utf-8"
-vim.o.spell              = true
-vim.o.spelllang          = "en_us"
-vim.o.completeopt        = "menuone,noinsert,noselect"
-vim.o.wildmode           = "longest,full"
-vim.o.timeoutlen         = 500
-vim.o.updatetime         = 300
+vim.opt.hidden             = true
+vim.opt.fileencoding       = "utf-8"
+vim.opt.spell              = true
+vim.opt.spelllang          = "en_us"
+vim.opt.timeoutlen = 500
+vim.opt.updatetime = 300
 vim.g.do_file_type_lua   = 1
 
 
@@ -16,7 +14,7 @@ vim.opt.listchars="trail:•,precedes:«,tab:▸ ,extends:»"
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = { "menuone","longest", "noselect" }
+vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
 vim.opt.wildmenu=true
 vim.opt.wildmode="list:longest,full"
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
