@@ -50,6 +50,9 @@ return require('packer').startup(function(use)
 		config = function() require('user.plugins.tokyonight') end,
 	})
 
+  use ({
+    'navarasu/onedark.nvim'
+  })
 	-- Lua
 	use  {
 		"folke/which-key.nvim",
