@@ -91,7 +91,10 @@ return require('packer').startup(function(use)
 	use { "RRethy/vim-illuminate" }
 
 	-- Git
-	use { "lewis6991/gitsigns.nvim" }
+	use ({
+    "lewis6991/gitsigns.nvim",
+    config = function() require('user.plugins.gitsigns') end
+  })
 
 	-- DAP
 	use { "mfussenegger/nvim-dap" }
@@ -102,8 +105,13 @@ return require('packer').startup(function(use)
 	use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
 	use({
 		'nvim-telescope/telescope.nvim',
-		requires = {{'nvim-lua/plenary.nvim'}},
-		config = function() require('user.plugins.telescope') end,
+		requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-live-grep-args.nvim' },
+    },
+		config = function()
+      require('user.plugins.telescope')
+    end,
 	})
 
 	-- bufferline

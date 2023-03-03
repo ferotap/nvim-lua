@@ -16,6 +16,7 @@ wk.register({
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open recent file"},
     R = { "<cmd>Telescope registers<cr>", "Show registers"},
+    a = { "<cmd>Telescope live_grep_args<cr>", "Search text with args"},
     s = { "<cmd>Telescope live_grep<cr>", "Search text"},
     z = { "<cmd>Telescope spell_suggest<cr>", "Spelling suggestions"},
     n = { "New File" }, -- just a label. don't create any mapping
